@@ -49,38 +49,15 @@ const SEOHero = () => {
         <TestimonialsAvatars priority={true} />
       </div>
       
-      <div className="lg:w-full relative">
-        <div className="mockup-browser border bg-base-300">
-          <div className="mockup-browser-toolbar">
-            <div className="input">https://yourbusiness.com</div>
-          </div>
-          <div className="flex justify-center px-4 py-16 bg-base-200">
-            <div className="stats shadow">
-              <div className="stat">
-                <div className="stat-figure text-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <div className="stat-title">Traffic</div>
-                <div className="stat-value text-primary">+300%</div>
-                <div className="stat-desc">90 days</div>
-              </div>
-              
-              <div className="stat">
-                <div className="stat-figure text-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
-                  </svg>
-                </div>
-                <div className="stat-title">Rankings</div>
-                <div className="stat-value text-secondary">#1</div>
-                <div className="stat-desc">Google Position</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
+      <div className="lg:w-full">
+        <Image
+          src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
+          alt="SEO Analytics Dashboard"
+          className="w-full rounded-lg shadow-xl"
+          priority={true}
+          width={500}
+          height={500}
+        />
       </div>
     </section>
   );

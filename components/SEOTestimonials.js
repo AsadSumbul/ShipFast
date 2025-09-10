@@ -29,15 +29,16 @@ const Testimonial = ({ i }) => {
 
   return (
     <li key={i}>
-      <figure className="relative max-w-sm h-full">
-        <div className="relative bg-base-200 p-6 rounded-lg h-full">
-          <p className="text-sm text-base-content/80 leading-relaxed">
+      <figure className="relative max-w-lg h-full p-6 md:p-10 bg-base-200 rounded-2xl max-md:text-sm flex flex-col">
+        <blockquote className="relative flex-1">
+          <p className="text-base-content/80 leading-relaxed">
             {testimonial.text}
           </p>
-        </div>
-        <figcaption className="flex items-center justify-center space-x-3 p-6">
-          <div className="flex items-center divide-x-2 divide-base-300">
-            <div className="pr-3 font-medium text-base-content">
+        </blockquote>
+        <figcaption className="relative flex items-center justify-start gap-4 pt-4 mt-4 md:gap-8 md:pt-8 md:mt-8 border-t border-base-content/5">
+          <div className="w-full flex items-center justify-between gap-2">
+            <div>
+              <div className="font-medium text-base-content md:mb-0.5">
                 {testimonial.name}
               </div>
               {testimonial.username && (
@@ -62,6 +63,7 @@ const Testimonial = ({ i }) => {
                 </span>
               )}
             </div>
+          </div>
         </figcaption>
       </figure>
     </li>
