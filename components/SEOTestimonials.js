@@ -29,82 +29,15 @@ const Testimonial = ({ i }) => {
 
   return (
     <li key={i}>
-      <div className="card bg-base-200 shadow-xl h-full">
-        <div className="card-body">
-          <p className="text-base-content/80 leading-relaxed">
+      <figure className="relative max-w-sm h-full">
+        <div className="relative bg-base-200 p-6 rounded-lg h-full">
+          <p className="text-sm text-base-content/80 leading-relaxed">
             {testimonial.text}
           </p>
-          <div className="card-actions justify-between items-center mt-4">
-            <div className="flex items-center gap-4">
-              <div className="avatar">
-                <div className="w-12 rounded-full">
-                  {testimonial.img ? (
-                    <Image
-                      src={list[i].img}
-                      alt={`${list[i].name}'s testimonial for ${config.appName}`}
-                      width={48}
-                      height={48}
-                    />
-                  ) : (
-                    <div className="bg-base-300 w-12 h-12 rounded-full flex justify-center items-center text-lg font-medium">
-                      {testimonial.name.charAt(0)}
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div>
-                <div className="font-medium text-base-content">
-                  {testimonial.name}
-                </div>
-                {testimonial.username && (
-                  <div className="text-sm text-base-content/80">
-                    @{testimonial.username}
-                  </div>
-                )}
-              </div>
-            </div>
-            <div className="rating rating-sm">
-              {[...Array(5)].map((_, i) => (
-                <input key={i} type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked={i === 4} />
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
-    </li>
-  );
-};
-
-const SEOTestimonials = () => {
-  return (
-    <section id="testimonials">
-      <div className="py-24 px-8 max-w-7xl mx-auto">
-        <div className="flex flex-col text-center w-full mb-20">
-          <div className="mb-8">
-            <h2 className="sm:text-5xl text-4xl font-extrabold text-base-content">
-              500+ businesses trust AsadBiz with their SEO
-            </h2>
-          </div>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-base-content/80">
-            Don&apos;t take our word for it. Here&apos;s what our clients say about 
-            the results we&apos;ve delivered for their businesses.
-          </p>
-        </div>
-
-        <ul
-          role="list"
-          className="flex flex-col items-center lg:flex-row lg:items-stretch gap-6 lg:gap-8"
-        >
-          {[...Array(3)].map((e, i) => (
-            <Testimonial key={i} i={i} />
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-};
-
-export default SEOTestimonials;
+        <figcaption className="flex items-center justify-center space-x-3 p-6">
+          <div className="flex items-center divide-x-2 divide-base-300">
+            <div className="pr-3 font-medium text-base-content">
                 {testimonial.name}
               </div>
               {testimonial.username && (
