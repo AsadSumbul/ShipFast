@@ -62,7 +62,6 @@ const Testimonial = ({ i }) => {
                 </span>
               )}
             </div>
-          </div>
         </figcaption>
       </figure>
     </li>
