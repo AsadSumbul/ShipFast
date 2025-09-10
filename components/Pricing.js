@@ -1,9 +1,7 @@
 import config from "@/config";
 import ButtonCheckout from "./ButtonCheckout";
 
-// <Pricing/> displays the pricing plans for your app
-// It's your Stripe config in config.js.stripe.plans[] that will be used to display the plans
-// <ButtonCheckout /> renders a button that will redirect the user to Stripe checkout called the /api/stripe/create-checkout API endpoint with the correct priceId
+// Modified to use custom amounts instead of priceId
 
 const Pricing = () => {
   return (
@@ -12,8 +10,12 @@ const Pricing = () => {
         <div className="flex flex-col text-center w-full mb-20">
           <p className="font-medium text-primary mb-8">Pricing</p>
           <h2 className="font-bold text-3xl lg:text-5xl tracking-tight">
-            Save hours of repetitive code and ship faster!
+            Choose the perfect SEO package for your business
           </h2>
+          <p className="mt-4 text-base-content/80 max-w-2xl mx-auto">
+            All packages include a FREE comprehensive SEO audit worth $500. 
+            No contracts, no hidden fees - just results.
+          </p>
         </div>
 
         <div className="relative flex justify-center flex-col lg:flex-row items-center lg:items-stretch gap-8">
@@ -89,10 +91,13 @@ const Pricing = () => {
                   </ul>
                 )}
                 <div className="space-y-2">
-                  <ButtonCheckout priceId={plan.priceId} />
+                  <ButtonCheckout amount={plan.price} planName={plan.name} />
 
                   <p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">
                     Pay once. Access forever.
+                  </p>
+                  <p className="text-xs text-center text-base-content/60">
+                    Includes FREE $500 SEO audit
                   </p>
                 </div>
               </div>

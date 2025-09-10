@@ -2,9 +2,9 @@ import themes from "daisyui/src/theming/themes.js";
 
 const config = {
   // REQUIRED
-  appName: "ShipFast",
+  appName: "AsadBiz",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "shipfa.st",
+  domainName: "asadbiz.com",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
     id: "",
@@ -18,23 +18,25 @@ const config = {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1Niyy5AxyNprDp7iZIqEyD2h"
+            ? "price_starter_seo"
             : "price_456",
         //  REQUIRED - Name of the plan, displayed on the pricing page
-        name: "Starter",
+        name: "SEO Starter",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
-        description: "Perfect for small projects",
+        description: "Perfect for small businesses getting started with SEO",
         // The price you want to display, the one user will be charged on Stripe.
-        price: 79,
+        price: 299,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 99,
+        priceAnchor: 399,
         features: [
           {
-            name: "NextJS boilerplate",
+            name: "Complete SEO audit",
           },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
+          { name: "Keyword research (up to 50 keywords)" },
+          { name: "On-page optimization" },
+          { name: "Technical SEO fixes" },
+          { name: "Monthly progress report" },
+          { name: "Email support" },
         ],
       },
       {
@@ -42,21 +44,44 @@ const config = {
         isFeatured: true,
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1Nk4AbAxyNprDp7iXEPBvXju"
+            ? "price_professional_seo"
             : "price_456",
-        name: "Advanced",
-        description: "You need more power",
-        price: 99,
-        priceAnchor: 149,
+        name: "SEO Professional",
+        description: "For growing businesses that need comprehensive SEO",
+        price: 599,
+        priceAnchor: 799,
         features: [
           {
-            name: "NextJS boilerplate",
+            name: "Everything in SEO Starter",
           },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
-          { name: "1 year of updates" },
-          { name: "24/7 support" },
+          { name: "Keyword research (up to 200 keywords)" },
+          { name: "Competitor analysis" },
+          { name: "Link building strategy" },
+          { name: "Local SEO optimization" },
+          { name: "Bi-weekly progress reports" },
+          { name: "Priority support" },
+        ],
+      },
+      {
+        priceId:
+          process.env.NODE_ENV === "development"
+            ? "price_enterprise_seo"
+            : "price_789",
+        name: "SEO Enterprise",
+        description: "For large businesses with complex SEO needs",
+        price: 1299,
+        priceAnchor: 1599,
+        features: [
+          {
+            name: "Everything in SEO Professional",
+          },
+          { name: "Unlimited keyword research" },
+          { name: "Advanced competitor analysis" },
+          { name: "Custom link building campaigns" },
+          { name: "Multi-location SEO" },
+          { name: "Weekly progress reports" },
+          { name: "Dedicated account manager" },
+          { name: "Phone & email support" },
         ],
       },
     ],
@@ -71,13 +96,13 @@ const config = {
     // subdomain to use when sending emails, if you don't have a subdomain, just remove it. Highly recommended to have one (i.e. mg.yourdomain.com or mail.yourdomain.com)
     subdomain: "mg",
     // REQUIRED — Email 'From' field to be used when sending magic login links
-    fromNoReply: `ShipFast <noreply@mg.shipfa.st>`,
+    fromNoReply: `AsadBiz <noreply@mg.asadbiz.com>`,
     // REQUIRED — Email 'From' field to be used when sending other emails, like abandoned carts, updates etc..
-    fromAdmin: `Marc at ShipFast <marc@mg.shipfa.st>`,
+    fromAdmin: `Asad at AsadBiz <asad@mg.asadbiz.com>`,
     // Email shown to customer if need support. Leave empty if not needed => if empty, set up Crisp above, otherwise you won't be able to offer customer support."
-    supportEmail: "marc@mg.shipfa.st",
+    supportEmail: "asad@mg.asadbiz.com",
     // When someone replies to supportEmail sent by the app, forward it to the email below (otherwise it's lost). If you set supportEmail to empty, this will be ignored.
-    forwardRepliesTo: "marc.louvion@gmail.com",
+    forwardRepliesTo: "asad@asadbiz.com",
   },
   colors: {
     // REQUIRED — The DaisyUI theme to use (added to _document.js). Leave blank for default (light & dark mode). If you any other theme than light/dark, you need to add it in config.tailwind.js in daisyui.themes.

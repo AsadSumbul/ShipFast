@@ -19,19 +19,19 @@ const Footer = () => {
             >
               <Image
                 src={logo}
-                alt="ShipFast logo"
+                alt="AsadBiz logo"
                 priority={true}
                 className="w-6 h-6"
                 width={24}
                 height={24}
               />
               <strong className="font-extrabold tracking-tight text-base md:text-lg">
-                ShipFast
+                AsadBiz
               </strong>
             </Link>
 
             <p className="mt-3 text-sm text-base-content/80">
-              Ship your startup in days, not weeks
+              Dominate Google rankings and grow your business
             </p>
             <p className="mt-3 text-sm text-base-content/60">
               Copyright © {new Date().getFullYear()} - All rights reserved
@@ -57,8 +57,8 @@ const Footer = () => {
                 <Link href="/#pricing" className="link link-hover">
                   Pricing
                 </Link>
-                <a href="/#" target="_blank" className="link link-hover">
-                  Affiliates
+                <Link href="/#features" className="link link-hover">
+                  Services
                 </a>
               </div>
             </div>
