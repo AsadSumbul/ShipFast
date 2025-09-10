@@ -59,7 +59,7 @@ const Footer = () => {
                 </Link>
                 <Link href="/#features" className="link link-hover">
                   Services
-                </a>
+               </Link>
               </div>
             </div>
 
