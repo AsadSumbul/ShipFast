@@ -1,12 +1,11 @@
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
-import ButtonLead from "@/components/ButtonLead";
 
 const SEOHero = () => {
   return (
     <section className="max-w-7xl mx-auto bg-base-100 flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-20 px-8 py-8 lg:py-20">
       <div className="flex flex-col gap-10 lg:gap-14 items-center justify-center text-center lg:text-left lg:items-start">
-        <div className="badge badge-outline">
+        <div className="badge badge-primary badge-lg">
           🎯 FREE SEO AUDIT INCLUDED
         </div>
 
@@ -22,7 +21,23 @@ const SEOHero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <ButtonLead />
+          <a href="#pricing" className="btn btn-primary btn-lg">
+            Get Free SEO Audit
+            <svg
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607z"
+              />
+            </svg>
+          </a>
           <div className="flex items-center gap-2 text-sm text-base-content/70">
             <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -35,30 +50,37 @@ const SEOHero = () => {
       </div>
       
       <div className="lg:w-full relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
-        <Image
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
-          alt="SEO Analytics Dashboard"
-          className="w-full rounded-2xl shadow-2xl relative z-10"
-          priority={true}
-          width={600}
-          height={400}
-        />
-        
-        {/* Floating stats */}
-        <div className="absolute -top-4 -left-4 bg-white rounded-xl shadow-lg p-4 z-20">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-semibold">+300% Traffic</span>
+        <div className="mockup-browser border bg-base-300">
+          <div className="mockup-browser-toolbar">
+            <div className="input">https://yourbusiness.com</div>
+          </div>
+          <div className="flex justify-center px-4 py-16 bg-base-200">
+            <div className="stats shadow">
+              <div className="stat">
+                <div className="stat-figure text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div className="stat-title">Traffic</div>
+                <div className="stat-value text-primary">+300%</div>
+                <div className="stat-desc">90 days</div>
+              </div>
+              
+              <div className="stat">
+                <div className="stat-figure text-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+                  </svg>
+                </div>
+                <div className="stat-title">Rankings</div>
+                <div className="stat-value text-secondary">#1</div>
+                <div className="stat-desc">Google Position</div>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 z-20">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-semibold">#1 Rankings</span>
-          </div>
-        </div>
       </div>
     </section>
   );

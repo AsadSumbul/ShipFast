@@ -429,9 +429,9 @@ const SEOFeatures = () => {
     <section className="py-24" id="features">
       <div className="max-w-3xl mx-auto">
         <div className="bg-base-100 max-md:px-8 max-w-3xl">
-          <p className="text-accent font-medium text-sm font-mono mb-3">
-            const results = "Guaranteed";
-          </p>
+          <div className="badge badge-accent mb-3">
+            Results Guaranteed
+          </div>
           <h2 className="font-extrabold text-3xl lg:text-5xl tracking-tight mb-8">
             Everything you need to dominate search results
           </h2>
@@ -444,15 +444,17 @@ const SEOFeatures = () => {
       </div>
 
       <div>
-        <div className="grid grid-cols-3 md:flex justify-start gap-4 md:gap-8 max-md:px-8 max-w-5xl mx-auto mb-8">
+        <div className="tabs tabs-boxed justify-center max-w-5xl mx-auto mb-8 flex-wrap">
           {features.map((feature) => (
-            <span
+            <a
               key={feature.name}
               onClick={() => {
                 if (!hasClicked) setHasClicked(true);
                 setFeatureSelected(feature.name);
               }}
-              className={`flex flex-col items-center justify-center gap-3 select-none cursor-pointer p-2 duration-200 group`}
+              className={`tab tab-lg flex flex-col items-center gap-2 ${
+                featureSelected === feature.name ? "tab-active" : ""
+              }`}
             >
               <span
                 className={`duration-100 ${
@@ -472,18 +474,18 @@ const SEOFeatures = () => {
               >
                 {feature.name}
               </span>
-            </span>
+            </a>
           ))}
         </div>
-        <div className="bg-base-200">
-          <div className="max-w-3xl mx-auto flex flex-col md:flex-row justify-center md:justify-start md:items-center gap-12">
+        <div className="card bg-base-200 shadow-xl max-w-3xl mx-auto">
+          <div className="card-body">
+            <h3 className="card-title text-2xl">
+              {features.find((f) => f.name === featureSelected)["name"]}
+            </h3>
             <div
-              className="text-base-content/80 leading-relaxed space-y-4 px-12 md:px-0 py-12 max-w-xl animate-opacity"
+              className="text-base-content/80 leading-relaxed space-y-4 animate-opacity"
               key={featureSelected}
             >
-              <h3 className="font-semibold text-base-content text-lg">
-                {features.find((f) => f.name === featureSelected)["name"]}
-              </h3>
 
               {features.find((f) => f.name === featureSelected)["description"]}
             </div>
