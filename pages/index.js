@@ -5,6 +5,7 @@ import Pricing from "@/components/Pricing";
 import SEOTestimonials from "@/components/SEOTestimonials";
 import SEOFAQ from "@/components/SEOFAQ";
 import SEOCTA from "@/components/SEOCTA";
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Pricing />
         <SEOFAQ />
         <SEOCTA />
+        <ContactForm />
       </main>
       <Footer />
     </>

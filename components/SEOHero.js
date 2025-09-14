@@ -21,7 +21,7 @@ const SEOHero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <a href="#pricing" className="btn btn-primary btn-lg">
+          <a href="#contact" className="btn btn-primary btn-lg">
             Get Free SEO Audit
             <svg
               xmlns="http://www.w3.org/2000/svg" 

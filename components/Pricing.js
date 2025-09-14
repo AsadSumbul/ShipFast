@@ -29,52 +29,61 @@ const Pricing = () => {
             <div key={plan.priceId} className="relative w-full max-w-lg">
               {plan.isFeatured && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                  <div className="badge badge-primary badge-lg">
+                  <span className="bg-primary text-primary-content px-4 py-2 rounded-full text-sm font-semibold">
                     MOST POPULAR
-                  </div>
+                  </span>
                 </div>
               )}
 
 
-              <div className={`card ${plan.isFeatured ? 'bg-primary text-primary-content' : 'bg-base-100'} shadow-xl h-full`}>
-                <div className="card-body">
-                  <h2 className="card-title text-2xl">{plan.name}</h2>
-                  {plan.description && (
-                    <p className={`${plan.isFeatured ? 'text-primary-content/80' : 'text-base-content/80'} mt-2`}>
-                      {plan.description}
-                    </p>
-                  )}
-                  
-                <div className="flex gap-2">
+              <div className={`relative h-full p-8 rounded-2xl shadow-xl border ${
+                plan.isFeatured 
+                  ? 'bg-primary text-white border-primary' 
+                  : 'bg-white text-gray-900 border-gray-200'
+              }`}>
+                <h2 className="card-title text-2xl">{plan.name}</h2>
+                {plan.description && (
+                  <p className={`mt-2 ${plan.isFeatured ? 'text-white/80' : 'text-gray-600'}`}>
+                    {plan.description}
+                  </p>
+                )}
+                
+                <div className="flex gap-2 mt-4">
                   {plan.priceAnchor && (
                     <div className="flex flex-col justify-end mb-[4px] text-lg ">
                       <p className="relative">
-                        <span className={`absolute ${plan.isFeatured ? 'bg-primary-content' : 'bg-base-content'} h-[1.5px] inset-x-0 top-[53%]`}></span>
-                        <span className={`${plan.isFeatured ? 'text-primary-content/80' : 'text-base-content/80'}`}>
+                        <span className={`absolute h-[1.5px] inset-x-0 top-[53%] ${
+                          plan.isFeatured ? 'bg-white' : 'bg-gray-900'
+                        }`}></span>
+                        <span className={`${plan.isFeatured ? 'text-white/80' : 'text-gray-500'}`}>
                           ${plan.priceAnchor}
                         </span>
                       </p>
                     </div>
                   )}
-                  <p className={`text-5xl tracking-tight font-extrabold`}>
+                  <p className="text-5xl tracking-tight font-extrabold">
                     ${plan.price}
                   </p>
                   <div className="flex flex-col justify-end mb-[4px]">
-                    <p className={`text-xs ${plan.isFeatured ? 'text-primary-content/60' : 'text-base-content/60'} uppercase font-semibold`}>
+                    <p className={`text-xs uppercase font-semibold ${
+                      plan.isFeatured ? 'text-white/60' : 'text-gray-500'
+                    }`}>
                       USD
                     </p>
                   </div>
                 </div>
                 
                 {plan.features && (
-                  <ul className="space-y-2.5 leading-relaxed text-base flex-1">
+                  <ul className="space-y-2.5 leading-relaxed text-base flex-1 mt-6">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
                           fill="currentColor"
-                          className="w-[18px] h-[18px] opacity-80 shrink-0"
+                          className={`w-[18px] h-[18px] shrink-0 ${
+                            plan.isFeatured ? 'text-white' : 'text-green-500'
+                          }`}
                         >
                           <path
                             fillRule="evenodd"
@@ -89,15 +98,18 @@ const Pricing = () => {
                   </ul>
                 )}
                 
-                <div className="card-actions justify-center">
+                <div className="mt-8 space-y-4">
                   <ButtonCheckout amount={plan.price} planName={plan.name} />
-                  <p className={`text-sm text-center ${plan.isFeatured ? 'text-primary-content/80' : 'text-base-content/80'} font-medium`}>
+                  <p className={`text-sm text-center font-medium ${
+                    plan.isFeatured ? 'text-white/80' : 'text-gray-600'
+                  }`}>
                     Pay once. Access forever.
                   </p>
-                  <p className={`text-xs text-center ${plan.isFeatured ? 'text-primary-content/60' : 'text-base-content/60'}`}>
+                  <p className={`text-xs text-center ${
+                    plan.isFeatured ? 'text-white/60' : 'text-gray-500'
+                  }`}>
                     Includes FREE $500 SEO audit
                   </p>
-                </div>
                 </div>
               </div>
             </div>
