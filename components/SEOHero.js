@@ -21,22 +21,8 @@ const SEOHero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <a href="#contact" className="btn btn-primary btn-lg">
+          <a href="#contact" className="btn btn-primary btn-lg whitespace-nowrap">
             Get Free SEO Audit
-            <svg
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607z"
-              />
-            </svg>
           </a>
           <div className="flex items-center gap-2 text-sm text-base-content/70">
             <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">

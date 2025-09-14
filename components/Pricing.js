@@ -36,14 +36,10 @@ const Pricing = () => {
               )}
 
 
-              <div className={`relative h-full p-8 rounded-2xl shadow-xl border ${
-                plan.isFeatured 
-                  ? 'bg-primary text-white border-primary' 
-                  : 'bg-white text-gray-900 border-gray-200'
-              }`}>
+              <div className="relative h-full p-8 rounded-2xl shadow-xl border bg-white text-gray-900 border-gray-200">
                 <h2 className="card-title text-2xl">{plan.name}</h2>
                 {plan.description && (
-                  <p className={`mt-2 ${plan.isFeatured ? 'text-white/80' : 'text-gray-600'}`}>
+                  <p className="mt-2 text-gray-600">
                     {plan.description}
                   </p>
                 )}
@@ -52,10 +48,8 @@ const Pricing = () => {
                   {plan.priceAnchor && (
                     <div className="flex flex-col justify-end mb-[4px] text-lg ">
                       <p className="relative">
-                        <span className={`absolute h-[1.5px] inset-x-0 top-[53%] ${
-                          plan.isFeatured ? 'bg-white' : 'bg-gray-900'
-                        }`}></span>
-                        <span className={`${plan.isFeatured ? 'text-white/80' : 'text-gray-500'}`}>
+                        <span className="absolute h-[1.5px] inset-x-0 top-[53%] bg-gray-900"></span>
+                        <span className="text-gray-500">
                           ${plan.priceAnchor}
                         </span>
                       </p>
@@ -65,9 +59,7 @@ const Pricing = () => {
                     ${plan.price}
                   </p>
                   <div className="flex flex-col justify-end mb-[4px]">
-                    <p className={`text-xs uppercase font-semibold ${
-                      plan.isFeatured ? 'text-white/60' : 'text-gray-500'
-                    }`}>
+                    <p className="text-xs uppercase font-semibold text-gray-500">
                       USD
                     </p>
                   </div>
@@ -81,9 +73,7 @@ const Pricing = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
                           fill="currentColor"
-                          className={`w-[18px] h-[18px] shrink-0 ${
-                            plan.isFeatured ? 'text-white' : 'text-green-500'
-                          }`}
+                          className="w-[18px] h-[18px] shrink-0 text-green-500"
                         >
                           <path
                             fillRule="evenodd"
@@ -99,15 +89,13 @@ const Pricing = () => {
                 )}
                 
                 <div className="mt-8 space-y-4">
-                  <ButtonCheckout amount={plan.price} planName={plan.name} />
-                  <p className={`text-sm text-center font-medium ${
-                    plan.isFeatured ? 'text-white/80' : 'text-gray-600'
-                  }`}>
+                  <div className="flex justify-center">
+                    <ButtonCheckout amount={plan.price} planName={plan.name} />
+                  </div>
+                  <p className="text-sm text-center font-medium text-gray-600">
                     Pay once. Access forever.
                   </p>
-                  <p className={`text-xs text-center ${
-                    plan.isFeatured ? 'text-white/60' : 'text-gray-500'
-                  }`}>
+                  <p className="text-xs text-center text-gray-500">
                     Includes FREE $500 SEO audit
                   </p>
                 </div>

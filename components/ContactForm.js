@@ -15,9 +15,17 @@ const ContactForm = () => {
     setIsLoading(true);
 
     try {
-      // Here you would typically send the form data to your backend
-      // For now, we'll just show a success message
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
       
       toast.success("Thanks! We'll contact you within 24 hours with your free SEO audit.");
       setFormData({ name: "", email: "", website: "", message: "" });
